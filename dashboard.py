@@ -95,7 +95,7 @@ with chart_col1:
     st.bar_chart(district_costs)
 
 with chart_col2:
-    st.subheader("Budget vs. Employment Success")
+    st.subheader("Budget vs. Placement Success")
     st.scatter_chart(data=filtered_df, x='Budget_Allocated_INR',
                      y='Employment_Retention_Rate', color='District')
 
@@ -122,4 +122,4 @@ st.success(
 # Optional: Keep this here so you can view your combined rows live at the bottom
 st.markdown("---")
 st.subheader("Live Appended Dataset View")
-st.dataframe(df)
+st.dataframe(df.rename(columns={'Employment_Retention_Rate': 'Job Placement Rate'}))
